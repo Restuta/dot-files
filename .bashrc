@@ -1,0 +1,13 @@
+alias git=hub
+alias remindme='google calendar add'
+#for opening man page in a separate window
+function manx { if [ $# -eq 1 ] ; then open x-man-page://$1 ; elif [ $# -eq 2 ] ; then open x-man-page://$1/$2 ; fi }
+alias show-hidden='defaults write com.apple.finder AppleShowAllFiles -bool YES'
+alias hide-hidden='defaults write com.apple.finder AppleShowAllFiles -bool NO'
+#several commands run in a loop providing real-time feedback
+alias git-auto-lg='while true; do clear; git lg | cat; sleep 2; done'
+alias ls-auto='while true; do clear; ls -a | cat; sleep 2; done'
+alias git-auto-sts='while true; do clear; git sts | cat; sleep 2; done'
+
+alias grep='grep --ignore-case --color=always'
+alias ..='cd ..'
