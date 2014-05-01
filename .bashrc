@@ -11,3 +11,5 @@ alias git-auto-sts='while true; do clear; git sts | cat; sleep 2; done'
 
 alias grep='grep --ignore-case --color=always'
 alias ..='cd ..'
+#favorites
+alias cd-mobile='cd ~/Projects/Ingenio/git-svn-trunk-direct/trunk/SRC/Keen/Keen.Mobile.Web'
