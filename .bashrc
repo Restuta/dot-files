@@ -14,6 +14,9 @@ alias ..='cd ..'
 #favorites
 alias cd-mobile='cd ~/Projects/Ingenio/git-svn-trunk-direct/trunk/SRC/Keen/Keen.Mobile.Web'
 
-alias f='find . -maxdepth 999 -type f -name'
+#find files reqursively with the provided name, case-insensitive
+alias f='find . -maxdepth 999 -type f -iname'
+#find pathes that matches provided name, case-insesnsitive
+alias fp='find . -maxdepth 999 -type f -ipath'
 alias garmin-backup='mv /Volumes/GARMIN/Garmin/Activities/*.fit ~/Dropbox/GPS\ Routes/Garmin/Activities/'
 
