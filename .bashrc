@@ -20,3 +20,5 @@ alias f='find . -maxdepth 999 -type f -iname'
 alias fp='find . -maxdepth 999 -type f -ipath'
 alias garmin-backup='mv /Volumes/GARMIN/Garmin/Activities/*.fit ~/Dropbox/GPS\ Routes/Garmin/Activities/'
 
+# When using sudo, use alias expansion (otherwise sudo ignores your aliases)
+alias sudo='sudo '
