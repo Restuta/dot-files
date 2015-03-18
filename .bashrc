@@ -20,5 +20,12 @@ alias f='find . -maxdepth 999 -type f -iname'
 alias fp='find . -maxdepth 999 -type f -ipath'
 alias garmin-backup='mv /Volumes/GARMIN/Garmin/Activities/*.fit ~/Dropbox/GPS\ Routes/Garmin/Activities/'
 
+#list dir sizes
+alias dir-size='du -sh */'
+
 # When using sudo, use alias expansion (otherwise sudo ignores your aliases)
 alias sudo='sudo '
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
