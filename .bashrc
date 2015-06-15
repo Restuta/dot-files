@@ -1,4 +1,8 @@
+# git
 alias git=hub
+alias g=git
+alias gs='git status -s'
+
 alias remindme='google calendar add'
 #for opening man page in a separate window
 function manx { if [ $# -eq 1 ] ; then open x-man-page://$1 ; elif [ $# -eq 2 ] ; then open x-man-page://$1/$2 ; fi }
@@ -29,3 +33,14 @@ alias sudo='sudo '
 export PATH="/usr/local/heroku/bin:$PATH"
 
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
+function anybar2 { echo -n $1 | nc -4u -w0 localhost ${2:-1739}; }
+
+#ember aliases
+alias ember-clean='rm -rf tmp/ bower_components/ node_modules/ dist/'
+alias ember-reinstall='ember-clean && npm install && bower install && ember install'
+
+#sublime 
+alias s='subl'
+
+#ngrok
+alias ngrok-restuta-31337='ngrok -authtoken gx68e/64ThwoJLzwgRxH -subdomain=restuta 31337'
