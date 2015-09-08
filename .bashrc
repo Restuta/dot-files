@@ -36,11 +36,12 @@ function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
 function anybar2 { echo -n $1 | nc -4u -w0 localhost ${2:-1739}; }
 
 #ember aliases
-alias ember-clean='rm -rf tmp/ bower_components/ node_modules/ dist/'
-alias ember-reinstall='ember-clean && npm install && bower install && ember install'
+alias ember-clean='rm -rf tmp/ bower_components/ node_modules/ dist/; npm cache clean;'
+alias ember-reinstall='ember-clean && npm install && bower install'
 
 #sublime 
 alias s='subl'
 
 #ngrok
 alias ngrok-restuta-31337='ngrok -authtoken gx68e/64ThwoJLzwgRxH -subdomain=restuta 31337'
+alias reload='livereloadx -s -p 31337'
