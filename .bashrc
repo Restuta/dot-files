@@ -24,8 +24,10 @@ alias f='find . -maxdepth 999 -type f -iname'
 alias fp='find . -maxdepth 999 -type f -ipath'
 alias garmin-backup='mv /Volumes/GARMIN/Garmin/Activities/*.fit ~/Dropbox/GPS\ Routes/Garmin/Activities/'
 
-#list dir sizes
-alias dir-size='du -sh */'
+#list dir sizes (requires "brew install coreutils")
+    #last grep param used to higlight "M" for Megabytes from the rest
+alias dir-size='du -sh */ | gsort -rh | grep --color -E "M\s|$"'
+alias size='du -sh * | gsort -rh'
 
 # When using sudo, use alias expansion (otherwise sudo ignores your aliases)
 alias sudo='sudo '
@@ -36,7 +38,7 @@ function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
 function anybar2 { echo -n $1 | nc -4u -w0 localhost ${2:-1739}; }
 
 #ember aliases
-alias ember-clean='rm -rf tmp/ bower_components/ node_modules/ dist/; npm cache clean;'
+alias ember-clean='rm -rf tmp/ bower_components/ node_modules/ dist/;  npm cache clean; bower cache clean'
 alias ember-reinstall='ember-clean && npm install && bower install'
 
 #sublime 
@@ -44,4 +46,9 @@ alias s='subl'
 
 #ngrok
 alias ngrok-restuta-31337='ngrok -authtoken gx68e/64ThwoJLzwgRxH -subdomain=restuta 31337'
+
+#livereload
 alias reload='livereloadx -s -p 31337'
+
+#copy current dir path to clipboard
+alias cpdir="pwd | tr -d '\n' | pbcopy"
