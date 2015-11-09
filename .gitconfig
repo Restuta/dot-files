@@ -1,0 +1,99 @@
+[merge]
+	tool = p4merge
+[mergetool "tkdiff"]
+	path = tkdiff
+	trustExitCode = true
+[mergetool "p4merge"]
+        cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$LOCAL" "$PWD/$MERGED"
+        keepTemporaries = false
+        trustExitCode = false
+        keepBackup = false
+[diff]
+	guitool = kdiff3
+	tool = Kaleidoscope
+[difftool "kdiff3"]
+	path = kdiff3
+	renames = true
+	cmd = \"kdiff3\" \"$LOCAL\" \"$REMOTE\"
+[core]
+	editor = subl -n -w
+	autocrlf = input
+	packedGitLimit = 128m
+	packedGitWindowSize = 128m
+	quotepath = off
+	trustctime = false
+	preloadindex = true
+	fscache = true
+[user]
+	name = Restuta
+	email = restuta8@gmail.com
+[gui]
+	recentrepo = D:/Projects/31337-book
+[alias]
+	reh = !git add -A && git reset --hard
+	me = merge --no-ff
+	meff = merge --ff
+	sh = stash 
+	sha = stash --include-untracked
+	st = status
+	sts = status -s
+	s = status -s
+	ch = checkout
+	co = commit
+	com = commit -m
+	coa = !git add -A :/ && git co -m
+	coe = !git add -A :/ && git co
+	cox = !git ex commit
+	exc = !git cox
+	br = branch
+	brvv = branch -vv #shows branches and corresponding remotes
+	remotes = brvv
+	r = rebase
+	rc = rebase --continue
+	ra = rebase --abort
+	mt = mergetool
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n20 --all
+	lg-current = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n20
+	assume-unchanged = update-index --assume-unchanged AppServer/Web.config
+	assume-changed = update-index --no-assume-unchanged AppServer/Web.config
+	revert-last-commit = reset --soft HEAD~1
+	delete-last-commit = reset --hard HEAD~1
+	stash-co = !git add -A && git commit -m 'STASH'
+	who = shortlog -sn
+	local = !git lg-current remotes/origin/master..HEAD
+	origin = !git lg-current HEAD..remotes/origin/master
+
+	#git svn
+	svn-local = !git lg-current remotes/git-svn..HEAD
+	svn-origin = !git lg-current HEAD..remotes/git-svn
+	svnco = svn dcommit
+[pack]
+	windowMemory = 128m
+	deltaCacheSize = 128m
+	packSizeLimit = 128m
+[gc]
+	auto = 256
+[color]
+	ui = true
+[credential]
+	helper =
+[push]
+	default = simple
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
+[rerere]
+	enabled = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
