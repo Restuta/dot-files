@@ -20,9 +20,10 @@ alias cd-mobile='cd ~/Projects/Ingenio/git-svn-trunk-direct/trunk/SRC/Keen/Keen.
 
 #find files reqursively with the provided name, case-insensitive
 alias f='find . -maxdepth 999 -type f -iname'
+alias rm-orig='f *.orig -exec rm -fv {} \;' #removes all *.orig files found in project
 #find pathes that matches provided name, case-insesnsitive
 alias fp='find . -maxdepth 999 -type f -ipath'
-alias garmin-backup='mv /Volumes/GARMIN/Garmin/Activities/*.fit ~/Dropbox/GPS\ Routes/Garmin/Activities/'
+alias garmin-backup='mv -v /Volumes/GARMIN/Garmin/Activities/*.fit ~/Dropbox/GPS\ Routes/Garmin/Activities/'
 
 #list dir sizes (requires "brew install coreutils")
     #last grep param used to higlight "M" for Megabytes from the rest
