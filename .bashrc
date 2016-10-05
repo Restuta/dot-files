@@ -49,7 +49,8 @@ alias s='subl'
 alias ngrok-restuta-31337='ngrok -authtoken gx68e/64ThwoJLzwgRxH -subdomain=restuta 31337'
 
 #livereload
-alias reload='livereloadx -s -p 31337'
+# alias reload='livereloadx -s -p 31337'
+alias reload='browser-sync start --server "." --port 7778 --files="**/*.*"'
 
 #copy current dir path to clipboard
 alias cpdir="pwd | tr -d '\n' | pbcopy"
