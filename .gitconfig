@@ -59,7 +59,7 @@
 	revert-last-commit = reset --soft HEAD~1
 	delete-last-commit = reset --hard HEAD~1
 	stash-co = !git add -A && git commit -m 'STASH'
-	who = shortlog -sn
+	who = shortlog -sne
 	local = !git lg-current remotes/origin/master..HEAD
 	origin = !git lg-current HEAD..remotes/origin/master
 

@@ -54,3 +54,5 @@ alias reload='browser-sync start --server "." --port 7778 --files="**/*.*"'
 
 #copy current dir path to clipboard
 alias cpdir="pwd | tr -d '\n' | pbcopy"
+
+export PATH="$HOME/.yarn/bin:$PATH"
