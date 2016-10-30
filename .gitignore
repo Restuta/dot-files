@@ -4,6 +4,7 @@
 !.gitignore
 !.bash_profile
 !.bashrc
+!.zshrc
 !git-completion.bash
 !git-prompt.sh
 .Rproj.user
