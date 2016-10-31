@@ -10,7 +10,8 @@ export ZSH=/Users/Restuta/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="pure"
+
+# commented out since "pure" theme is configured differently below
 # ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -92,3 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # . /Users/Restuta/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#for pure theme to work, for others uncomment ZSH_THEME theme above
+ autoload -U promptinit; promptinit
+ prompt pure
