@@ -5,6 +5,7 @@
 !.bash_profile
 !.bashrc
 !.zshrc
+!deploy.sh
 !git-completion.bash
 !git-prompt.sh
 .Rproj.user
