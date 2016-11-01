@@ -38,7 +38,7 @@
 	st = status
 	sts = status -s
 	s = status -s
-	f = fetch
+	f = fetch --prune
 	fr = !git fetch && git rebase
 	ch = checkout
 	co = commit
@@ -101,3 +101,7 @@
 	required = true
 [http]
 	postBuffer = 524288000
+[remote "origin"]
+	prune = true
+[pull]
+	rebase = true
