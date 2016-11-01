@@ -7,3 +7,4 @@ ln -s $(pwd)/.bashrc ~/.bashrc
 ln -s $(pwd)/.zshrc ~/.zshrc
 ln -s $(pwd)/git-completion.bash ~/git-completion.bash
 ln -s $(pwd)/git-prompt.sh ~/git-prompt.sh
+ln -s $(pwd)/.gitconfig ~/.gitconfig

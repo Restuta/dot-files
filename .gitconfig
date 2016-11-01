@@ -38,6 +38,8 @@
 	st = status
 	sts = status -s
 	s = status -s
+	f = fetch
+	fr = !git fetch && git rebase
 	ch = checkout
 	co = commit
 	com = commit -m

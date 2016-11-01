@@ -2,6 +2,7 @@
 *
 #excluding these
 !.gitignore
+!.gitconfig
 !.bash_profile
 !.bashrc
 !.zshrc
