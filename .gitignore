@@ -1,5 +1,5 @@
 #ignore everything
-*
+
 #excluding these
 !.gitignore
 !.gitconfig
@@ -9,4 +9,7 @@
 !deploy.sh
 !git-completion.bash
 !git-prompt.sh
+
 .Rproj.user
+
+!./iTerm/com.googlecode.iterm2.plist
