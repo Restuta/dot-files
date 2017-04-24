@@ -97,3 +97,5 @@ source $ZSH/oh-my-zsh.sh
 #for pure theme to work, for others uncomment ZSH_THEME theme above
  autoload -U promptinit; promptinit
  prompt pure
+
+export PATH="$HOME/.yarn/bin:$PATH"

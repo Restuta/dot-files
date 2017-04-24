@@ -9,8 +9,8 @@
         trustExitCode = false
         keepBackup = false
 [diff]
-	guitool = kdiff3
-	tool = Kaleidoscope
+	guitool = p4merge
+	tool = p4merge
 [difftool "kdiff3"]
 	path = kdiff3
 	renames = true
@@ -47,6 +47,8 @@
 	coe = !git add -A :/ && git co
 	cox = !git ex commit
 	exc = !git cox
+	cp = !git cherry-pick
+	cpa = !git cherry-pick --abort
 	br = branch
 	brvv = branch -vv #shows branches and corresponding remotes
 	remotes = brvv
@@ -55,7 +57,7 @@
 	ra = rebase --abort
 	mt = mergetool
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n20 --all
-	lg-current = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n20
+	lgc = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n20
 	assume-unchanged = update-index --assume-unchanged AppServer/Web.config
 	assume-changed = update-index --no-assume-unchanged AppServer/Web.config
 	revert-last-commit = reset --soft HEAD~1
@@ -65,10 +67,20 @@
 	local = !git lg-current remotes/origin/master..HEAD
 	origin = !git lg-current HEAD..remotes/origin/master
 
+	#restuta diff :), usager "git rdiff branch1..branch2 <file-path>"
+	rdiff = diff --patience --ignore-all-space --ignore-blank-lines --ignore-space-at-eol --word-diff=color
+	#by default ignore spaces in diffs
+	# diff= diff --ignore-blank-lines --ignore-space-at-eol --ignore-all-space 
+	fdiff=!git diff --color | diff-so-fancy | less --tabs=4 -RFX
+
 	#git svn
 	svn-local = !git lg-current remotes/git-svn..HEAD
 	svn-origin = !git lg-current HEAD..remotes/git-svn
 	svnco = svn dcommit
+	up = !git rev-list --left-right --count origin/master...HEAD | sed 's/[0-9]/& behind/' | sed 's/.*/& ahead/'
+	
+	
+
 [pack]
 	windowMemory = 128m
 	deltaCacheSize = 128m
@@ -80,7 +92,7 @@
 [credential]
 	helper =
 [push]
-	default = simple
+	default = current
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -105,3 +117,6 @@
 	prune = true
 [pull]
 	rebase = true
+[log]
+	decorate = true
+	abbrevCommit = true
