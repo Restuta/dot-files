@@ -3,7 +3,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Restuta/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 . ~/.bashrc
 
