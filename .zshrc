@@ -7,6 +7,8 @@ export ZSH=~/.oh-my-zsh
 
 . ~/.bashrc
 
+ZSH_THEME=""
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -56,7 +58,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime colorize)
+plugins=(git sublime colorize zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
