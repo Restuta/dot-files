@@ -17,4 +17,6 @@ brew install git
 brew install hub
 brew install zsh zsh-completions
 brew install zsh-syntax-highlighting
+# gsort and etc
+brew install coreutils
 ```
