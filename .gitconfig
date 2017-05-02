@@ -16,7 +16,8 @@
 	renames = true
 	cmd = \"kdiff3\" \"$LOCAL\" \"$REMOTE\"
 [core]
-	editor = subl -n -w
+	#editor = subl -n -w
+	editor = atom --wait
 	autocrlf = input
 	packedGitLimit = 128m
 	packedGitWindowSize = 128m
@@ -24,6 +25,7 @@
 	trustctime = false
 	preloadindex = true
 	fscache = true
+	excludesfile = ~/.gitignore_global
 [user]
 	name = Restuta
 	email = restuta8@gmail.com
@@ -33,7 +35,7 @@
 	reh = !git add -A && git reset --hard
 	me = merge --no-ff
 	meff = merge --ff
-	sh = stash 
+	sh = stash
 	sha = stash --include-untracked
 	st = status
 	sts = status -s
@@ -63,14 +65,16 @@
 	revert-last-commit = reset --soft HEAD~1
 	delete-last-commit = reset --hard HEAD~1
 	stash-co = !git add -A && git commit -m 'STASH'
+	sru = !git sha && git r && git stash pop
+
 	who = shortlog -sne
 	local = !git lg-current remotes/origin/master..HEAD
 	origin = !git lg-current HEAD..remotes/origin/master
 
-	#restuta diff :), usager "git rdiff branch1..branch2 <file-path>"
+	#restuta diff :), usage "git rdiff branch1..branch2 <file-path>"
 	rdiff = diff --patience --ignore-all-space --ignore-blank-lines --ignore-space-at-eol --word-diff=color
 	#by default ignore spaces in diffs
-	# diff= diff --ignore-blank-lines --ignore-space-at-eol --ignore-all-space 
+	# diff= diff --ignore-blank-lines --ignore-space-at-eol --ignore-all-space
 	fdiff=!git diff --color | diff-so-fancy | less --tabs=4 -RFX
 
 	#git svn
@@ -78,8 +82,8 @@
 	svn-origin = !git lg-current HEAD..remotes/git-svn
 	svnco = svn dcommit
 	up = !git rev-list --left-right --count origin/master...HEAD | sed 's/[0-9]/& behind/' | sed 's/.*/& ahead/'
-	
-	
+
+
 
 [pack]
 	windowMemory = 128m
@@ -120,3 +124,13 @@
 [log]
 	decorate = true
 	abbrevCommit = true
+[difftool "sourcetree"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = true
+[fetch]
+	prune = true
+[commit]
+	template = /Users/restuta/.stCommitMsg

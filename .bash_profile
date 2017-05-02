@@ -8,9 +8,9 @@ source ~/.bashrc  # get aliases
 
 #GIT_PS1_SHOWDIRTYSTATE=true 	#	* unstaged +staged
 GIT_PS1_SHOWSTASHSTATE=true 	#	$ stashed
-#GIT_PS1_SHOWUNTRACKEDFILES=true #	% untraked 
-GIT_PS1_SHOWUPSTREAM=true		#	< behind, > ahead, <> diverged, = no difference	
-#GIT_PS1_SHOWUPSTREAM="verbose name"		#	< behind, > ahead, <> diverged, = no difference	
+#GIT_PS1_SHOWUNTRACKEDFILES=true #	% untraked
+GIT_PS1_SHOWUPSTREAM=true		#	< behind, > ahead, <> diverged, = no difference
+#GIT_PS1_SHOWUPSTREAM="verbose name"		#	< behind, > ahead, <> diverged, = no difference
 GIT_PS1_SHOWCOLORHINTS=true
 
 #export PS1='\[\e[0;31m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;37m\]\w\[\e[0m\]\n\$ '

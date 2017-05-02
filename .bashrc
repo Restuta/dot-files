@@ -42,7 +42,7 @@ function anybar2 { echo -n $1 | nc -4u -w0 localhost ${2:-1739}; }
 alias ember-clean='rm -rf tmp/ bower_components/ node_modules/ dist/;  npm cache clean; bower cache clean'
 alias ember-reinstall='ember-clean && npm install && bower install'
 
-#sublime 
+#sublime
 alias s='subl'
 
 #ngrok
@@ -56,3 +56,6 @@ alias reload='browser-sync start --server "." --port 7778 --files="**/*.*"'
 alias cpdir="pwd | tr -d '\n' | pbcopy"
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# better formatted docker ps -a Shows all running and stopped containers
+alias dps="docker ps -a --format 'table {{.Names}}\t{{.Image}}\t{{.Size}}\t{{.Command}}\t{{.Status}}\t{{.Ports}}'"
