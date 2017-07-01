@@ -59,3 +59,13 @@ export PATH="$HOME/.yarn/bin:$PATH"
 
 # better formatted docker ps -a Shows all running and stopped containers
 alias dps="docker ps -a --format 'table {{.Names}}\t{{.Image}}\t{{.Size}}\t{{.Command}}\t{{.Status}}\t{{.Ports}}'"
+
+alias dc="docker-compose"
+alias dcu="docker-compose up"
+
+alias y="yarn"
+alias ys="yarn start"
+alias ysl="yarn start:lean"
+
+# git
+alias glocal="git lgc remotes/origin/$(git branch | grep \* | cut -d ' ' -f2)..HEAD"
