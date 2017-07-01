@@ -16,8 +16,8 @@
 	renames = true
 	cmd = \"kdiff3\" \"$LOCAL\" \"$REMOTE\"
 [core]
-	#editor = subl -n -w
-	editor = atom --wait
+	editor = subl -n -w
+	# editor = atom --wait
 	autocrlf = input
 	packedGitLimit = 128m
 	packedGitWindowSize = 128m
@@ -25,9 +25,9 @@
 	trustctime = false
 	preloadindex = true
 	fscache = true
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/restuta/.gitignore_global
 [user]
-	name = Restuta
+	name = restuta
 	email = restuta8@gmail.com
 [gui]
 	recentrepo = D:/Projects/31337-book
@@ -62,14 +62,16 @@
 	lgc = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n20
 	assume-unchanged = update-index --assume-unchanged AppServer/Web.config
 	assume-changed = update-index --no-assume-unchanged AppServer/Web.config
-	revert-last-commit = reset --soft HEAD~1
+	revert-last-commit = reset --mixed HEAD~1
 	delete-last-commit = reset --hard HEAD~1
 	stash-co = !git add -A && git commit -m 'STASH'
 	sru = !git sha && git r && git stash pop
+	rebase-on-master = !git sha && git ch master && git pull && git ch - && git r master && git stash pop
+	stash-pull-unstash = !git sha && git pull && git stash pop
 
 	who = shortlog -sne
-	local = !git lg-current remotes/origin/master..HEAD
-	origin = !git lg-current HEAD..remotes/origin/master
+	local = !git lgc remotes/origin/master..HEAD
+	origin = !git lgc HEAD..remotes/origin/master
 
 	#restuta diff :), usage "git rdiff branch1..branch2 <file-path>"
 	rdiff = diff --patience --ignore-all-space --ignore-blank-lines --ignore-space-at-eol --word-diff=color
@@ -78,8 +80,8 @@
 	fdiff=!git diff --color | diff-so-fancy | less --tabs=4 -RFX
 
 	#git svn
-	svn-local = !git lg-current remotes/git-svn..HEAD
-	svn-origin = !git lg-current HEAD..remotes/git-svn
+	svn-local = !git lgc remotes/git-svn..HEAD
+	svn-origin = !git lgc HEAD..remotes/git-svn
 	svnco = svn dcommit
 	up = !git rev-list --left-right --count origin/master...HEAD | sed 's/[0-9]/& behind/' | sed 's/.*/& ahead/'
 
@@ -126,7 +128,7 @@
 	abbrevCommit = true
 [difftool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = true
