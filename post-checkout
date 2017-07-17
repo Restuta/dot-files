@@ -1,0 +1,10 @@
+#!/bin/sh
+
+last_commit_is_stash () {
+  git log -n 1 --oneline --abbrev-commit | grep -Eq 'STASH'
+}
+
+if last_commit_is_stash
+then
+  echo '❗️ last commit is a STASH commit, run "git revert-last-commit" to unstash'
+fi
