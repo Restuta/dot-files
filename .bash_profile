@@ -5,6 +5,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 source ~/git-completion.bash #git's autocompletion script
 source ~/git-prompt.sh #git prompt support (allows to see git current branch name in the prompt)
 source ~/.bashrc  # get aliases
+source ~/.building-connected.sh # BuildingConnnected speicific aliases
 
 #GIT_PS1_SHOWDIRTYSTATE=true 	#	* unstaged +staged
 GIT_PS1_SHOWSTASHSTATE=true 	#	$ stashed

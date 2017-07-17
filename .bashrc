@@ -15,8 +15,7 @@ alias git-auto-sts='while true; do clear; git sts | cat; sleep 2; done'
 
 alias grep='grep --ignore-case --color=always'
 alias ..='cd ..'
-#favorites
-alias cd-mobile='cd ~/Projects/Ingenio/git-svn-trunk-direct/trunk/SRC/Keen/Keen.Mobile.Web'
+
 
 #find files reqursively with the provided name, case-insensitive
 alias f='find . -maxdepth 999 -type f -iname'
@@ -65,7 +64,6 @@ alias dcu="docker-compose up"
 
 alias y="yarn"
 alias ys="yarn start"
-alias ysl="yarn start:lean"
 
 # git
 alias glocal="git lgc remotes/origin/$(git branch | grep \* | cut -d ' ' -f2)..HEAD"
