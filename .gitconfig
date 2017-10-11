@@ -30,7 +30,6 @@
 	name = restuta
 	email = restuta8@gmail.com
 [gui]
-	recentrepo = D:/Projects/31337-book
 [alias]
 	reh = !git add -A && git reset --hard
 	me = merge --no-ff

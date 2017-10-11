@@ -6,6 +6,7 @@ source ~/git-completion.bash #git's autocompletion script
 source ~/git-prompt.sh #git prompt support (allows to see git current branch name in the prompt)
 source ~/.bashrc  # get aliases
 source ~/.building-connected.sh # BuildingConnnected speicific aliases
+source ~/.profile # rvm (Ruby version manager) variables
 
 #GIT_PS1_SHOWDIRTYSTATE=true 	#	* unstaged +staged
 GIT_PS1_SHOWSTASHSTATE=true 	#	$ stashed
@@ -22,3 +23,5 @@ export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
 shopt -s histappend                      # append to history, don't overwrite it
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
