@@ -4,10 +4,13 @@
 	path = tkdiff
 	trustExitCode = true
 [mergetool "p4merge"]
-        cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$LOCAL" "$PWD/$MERGED"
-        keepTemporaries = false
-        trustExitCode = false
-        keepBackup = false
+    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$LOCAL" "$PWD/$MERGED"
+    keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
 [diff]
 	guitool = p4merge
 	tool = p4merge
@@ -26,14 +29,15 @@
 	preloadindex = true
 	fscache = true
 	excludesfile = /Users/restuta/.gitignore_global
+	mergeoptions = --no-edit
 [user]
 	name = restuta
 	email = restuta8@gmail.com
 [gui]
 [alias]
 	reh = !git add -A && git reset --hard
-	me = merge --no-ff
-	meff = merge --ff
+	me = merge --no-ff --no-edit
+	meff = merge --ff --no-edit
 	sh = stash
 	sha = stash --include-untracked
 	st = status
@@ -65,7 +69,9 @@
 	delete-last-commit = reset --hard HEAD~1
 	stash-co = !git add -A && git commit -m 'STASH'
 	sru = !git sha && git r && git stash pop
-	rebase-on-master = !git sha && git ch master && git pull && git ch - && git r master && git stash pop
+	rebase-on-master = !git ch master && git pull && git ch - && git r master
+	pull-master-and-merge = !git ch master && git pull && git ch - && git me master
+	stash-pull-master-and-merge = !git sha && git ch master && git pull && git ch - && git me master && git stash pop
 	stash-pull-unstash = !git sha && git pull && git stash pop
 
 	who = shortlog -sne
@@ -105,9 +111,6 @@
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [mergetool]
 	prompt = false
 [rerere]

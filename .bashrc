@@ -33,13 +33,15 @@ alias size='du -sh * | gsort -rh'
 alias sudo='sudo '
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
 function anybar2 { echo -n $1 | nc -4u -w0 localhost ${2:-1739}; }
 
 #ember aliases
-alias ember-clean='rm -rf tmp/ bower_components/ node_modules/ dist/;  npm cache clean; bower cache clean'
-alias ember-reinstall='ember-clean && npm install && bower install'
+# alias ember-clean='rm -rf tmp/ bower_components/ node_modules/ dist/;  npm cache clean; bower cache clean'
+# alias ember-reinstall='ember-clean && npm install && bower install'
 
 #sublime
 alias s='subl'
@@ -68,5 +70,7 @@ alias ys="yarn start"
 # git
 alias glocal="git lgc remotes/origin/$(git branch | grep \* | cut -d ' ' -f2)..HEAD"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# run ava debugger, ava-dbg "file/name"
+alias ava-dbg="node --inspect node_modules/ava/profile.js"
+
+alias fh="history | awk '{\$1=\"\";print}' | fzf --tac --no-sort | awk '{\$1=\$1;print}' | pbcopy"
