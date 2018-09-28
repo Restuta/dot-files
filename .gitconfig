@@ -73,6 +73,7 @@
 	pull-master-and-merge = !git ch master && git pull && git ch - && git me master
 	stash-pull-master-and-merge = !git sha && git ch master && git pull && git ch - && git me master && git stash pop
 	stash-pull-unstash = !git sha && git pull && git stash pop
+	copy-last-hash = !git log -n 1 --pretty=format:"%H" | pbcopy
 
 	who = shortlog -sne
 	local = !git lgc remotes/origin/master..HEAD
@@ -130,7 +131,7 @@
 	abbrevCommit = true
 [difftool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = true
