@@ -19,4 +19,7 @@ brew install zsh zsh-completions
 brew install zsh-syntax-highlighting
 # gsort and etc
 brew install coreutils
+
+# make zsh default shell
+chsh -s /bin/zsh
 ```
