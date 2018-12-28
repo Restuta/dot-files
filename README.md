@@ -27,6 +27,11 @@ chsh -s /bin/zsh
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-#
+# pure prompt
 npm install --global pure-prompt
+
+# diff so fancy
+npm i -g diff-so-fancy
+git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
+
 ```
