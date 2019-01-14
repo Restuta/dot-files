@@ -20,6 +20,8 @@ brew install zsh-syntax-highlighting
 brew install fzf
 # gsort and etc
 brew install coreutils
+# text interface for git
+brew install tig
 
 # make zsh default shell
 chsh -s /bin/zsh
