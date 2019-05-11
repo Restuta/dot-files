@@ -3,6 +3,8 @@ alias git=hub
 alias g=git
 alias gs='git status -s'
 
+alias cat='bat -p'
+
 alias remindme='google calendar add'
 #for opening man page in a separate window
 function manx { if [ $# -eq 1 ] ; then open x-man-page://$1 ; elif [ $# -eq 2 ] ; then open x-man-page://$1/$2 ; fi }
@@ -19,7 +21,7 @@ alias ..='cd ..'
 
 #find files reqursively with the provided name, case-insensitive
 alias f='find . -maxdepth 999 -type f -iname'
-alias rm-orig='f *.orig -exec rm -fv {} \;' #removes all *.orig files found in project
+alias rm-orig='f "*.*orig*" -delete' #removes all *.orig files found in project
 #find pathes that matches provided name, case-insesnsitive
 alias fp='find . -maxdepth 999 -type f -ipath'
 alias garmin-backup='mv -v /Volumes/GARMIN/Garmin/Activities/*.fit ~/Dropbox/GPS\ Routes/Garmin/Activities/'
@@ -67,6 +69,8 @@ alias dcu="docker-compose up"
 alias y="yarn"
 alias ys="yarn start"
 
+alias nrd="npm run dev"
+
 # git
 alias glocal="git lgc remotes/origin/$(git branch | grep \* | cut -d ' ' -f2)..HEAD"
 
@@ -74,3 +78,6 @@ alias glocal="git lgc remotes/origin/$(git branch | grep \* | cut -d ' ' -f2)..H
 alias ava-dbg="node --inspect node_modules/ava/profile.js"
 
 alias fh="history | awk '{\$1=\"\";print}' | fzf --tac --no-sort | awk '{\$1=\$1;print}' | pbcopy"
+
+# toast
+alias run-prod-script="heroku run bash -a toast-prod"

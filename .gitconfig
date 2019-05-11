@@ -11,6 +11,9 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+	trustExitCode = true
 [diff]
 	guitool = p4merge
 	tool = p4merge
@@ -19,8 +22,8 @@
 	renames = true
 	cmd = \"kdiff3\" \"$LOCAL\" \"$REMOTE\"
 [core]
-	editor = subl -n -w
-	# editor = atom --wait
+	editor = /usr/local/bin/sublime -n -w
+	#editor = atom --wait
 	autocrlf = input
 	packedGitLimit = 128m
 	packedGitWindowSize = 128m
@@ -30,6 +33,7 @@
 	fscache = true
 	excludesfile = /Users/restuta/.gitignore_global
 	mergeoptions = --no-edit
+	pager = diff-so-fancy | less --tabs=2 -RFX
 [user]
 	name = restuta
 	email = restuta8@gmail.com
@@ -46,6 +50,8 @@
 	f = fetch --prune
 	fr = !git fetch && git rebase
 	ch = checkout
+	chm = checkout master
+	chmp = !git checkout master && git pull
 	co = commit
 	com = commit -m
 	coa = !git add -A :/ && git co -m
@@ -54,13 +60,17 @@
 	exc = !git cox
 	cp = !git cherry-pick
 	cpa = !git cherry-pick --abort
+	pc = !git push -u && hub compare
 	br = branch
 	brvv = branch -vv #shows branches and corresponding remotes
 	remotes = brvv
 	r = rebase
 	rc = rebase --continue
+	rs = rebase --skip
 	ra = rebase --abort
 	mt = mergetool
+	mc = merge --continue
+	ma = merge --abort
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n20 --all
 	lgc = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n20
 	assume-unchanged = update-index --assume-unchanged AppServer/Web.config
@@ -114,6 +124,7 @@
 	prompt = false
 [mergetool]
 	prompt = false
+	keepBackup = false
 [rerere]
 	enabled = true
 [filter "lfs"]
@@ -131,7 +142,7 @@
 	abbrevCommit = true
 [difftool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = true
@@ -139,3 +150,15 @@
 	prune = true
 [commit]
 	template = /Users/restuta/.stCommitMsg
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
