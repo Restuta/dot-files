@@ -22,6 +22,7 @@ brew install fzf
 brew install coreutils
 # text interface for git
 brew install tig
+brew install bat
 
 # make zsh default shell
 chsh -s /bin/zsh
