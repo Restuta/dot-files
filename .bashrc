@@ -29,7 +29,7 @@ alias garmin-backup='mv -v /Volumes/GARMIN/Garmin/Activities/*.fit ~/Dropbox/GPS
 #list dir sizes (requires "brew install coreutils")
     #last grep param used to higlight "M" for Megabytes from the rest
 alias dir-size='du -sh */ | gsort -rh | grep --color -E "M\s|$"'
-alias size='du -sh * | gsort -rh'
+alias size='du -sh * | gsort -rh | grep --color -E "G\s|$"'
 
 # When using sudo, use alias expansion (otherwise sudo ignores your aliases)
 alias sudo='sudo '
