@@ -21,6 +21,8 @@ brew install zsh-syntax-highlighting
 brew install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
+git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
+
 brew install fzf
 # gsort and etc
 brew install coreutils
