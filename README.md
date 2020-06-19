@@ -17,12 +17,17 @@ brew install git
 brew install hub
 brew install zsh zsh-completions
 brew install zsh-syntax-highlighting
+
+brew install zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
 brew install fzf
 # gsort and etc
 brew install coreutils
 # text interface for git
 brew install tig
 brew install bat
+brew install awscli
 
 # make zsh default shell
 chsh -s /bin/zsh
