@@ -22,7 +22,7 @@
 	renames = true
 	cmd = \"kdiff3\" \"$LOCAL\" \"$REMOTE\"
 [core]
-	editor = /usr/local/bin/sublime -n -w
+	editor = subl -n -w
 	#editor = atom --wait
 	autocrlf = input
 	packedGitLimit = 128m
@@ -62,6 +62,8 @@
 	cpa = !git cherry-pick --abort
 	pc = !git push -u && hub compare
 	br = branch
+	# show few most recently create branches
+	brr = !git for-each-ref --sort='-committerdate' --format='%(refname)%09%(committerdate)' refs/heads | sed -e 's-refs/heads/--' | head
 	brvv = branch -vv #shows branches and corresponding remotes
 	remotes = brvv
 	r = rebase
@@ -127,10 +129,6 @@
 	keepBackup = false
 [rerere]
 	enabled = true
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
 [http]
 	postBuffer = 524288000
 [remote "origin"]
@@ -162,3 +160,8 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
