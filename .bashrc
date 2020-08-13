@@ -29,7 +29,7 @@ alias garmin-backup='mv -v /Volumes/GARMIN/Garmin/Activities/*.fit ~/Dropbox/GPS
 #list dir sizes (requires "brew install coreutils")
     #last grep param used to higlight "M" for Megabytes from the rest
 alias dir-size='du -sh */ | gsort -rh | grep --color -E "M\s|$"'
-alias size='du -sh * | gsort -rh | grep --color -E "G\s|$"'
+alias size='du -sh * | gsort -rh | grep --color -E "M\s|$"'
 
 # When using sudo, use alias expansion (otherwise sudo ignores your aliases)
 alias sudo='sudo '
@@ -73,6 +73,7 @@ alias nrd="npm run dev"
 
 # git
 alias glocal="git lgc remotes/origin/$(git branch | grep \* | cut -d ' ' -f2)..HEAD"
+alias ch="gh pr checkout $1"
 
 # run ava debugger, ava-dbg "file/name"
 alias ava-dbg="node --inspect node_modules/ava/profile.js"
