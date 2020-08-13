@@ -1,0 +1,69 @@
+{
+  "window.zoomLevel": 0,
+  "editor.fontSize": 15,
+  "editor.fontFamily": "'Operator Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.tabSize": 2,
+  "editor.fontLigatures": true,
+  "editor.wordWrapColumn": 100,
+  "prettier.printWidth": 85,
+  "prettier.singleQuote": true,
+  "workbench.colorTheme": "One Dark Pro",
+  "cSpell.userWords": [
+    "Bumpito",
+    "CLOUDAMQP",
+    "Hubspot",
+    "Onepark",
+    "Orgs",
+    "dyno",
+    "envoybot",
+    "gitbot",
+    "hardcoding",
+    "jide",
+    "juni",
+    "mrkdwn",
+    "ntwrkbot",
+    "sano",
+    "snengbot",
+    "talview",
+    "uinc",
+    "wellthy",
+    "xfers"
+  ],
+  "editor.formatOnType": true,
+  "editor.suggestFontSize": 14,
+
+  "editor.lineHeight": 19,
+  "bracket-pair-colorizer-2.colorMode": "Independent",
+  "editor.minimap.enabled": false,
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "workbench.iconTheme": "eq-material-theme-icons",
+
+  // Controls if file decorations should use badges.
+  "explorer.decorations.badges": true,
+
+  "editor.tokenColorCustomizations": {
+    "[Community Material Theme Darker]": {
+      // customize textMate rules here https://code.visualstudio.com/api/extension-guides/color-theme
+      // Atom one dark pro has syntax for styling function arguments
+      "textMateRules": [
+        {
+          "scope": ["comment", "comment punctuation.definition.comment"],
+          "settings": {
+            // "foreground": "#FF0000"
+          }
+        }
+      ]
+    }
+  },
+
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#282c34",
+    // "activityBar.background": "#282c34"
+    // "sideBar.background": "#282c34"
+    "[Community Material Theme Darker]": {
+      // "symbolIcon.variableForeground": "#75beff"
+      // "sideBar.background": "#ff0000"
+    }
+  }
+}
