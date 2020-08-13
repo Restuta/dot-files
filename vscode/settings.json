@@ -50,7 +50,7 @@
         {
           "scope": ["comment", "comment punctuation.definition.comment"],
           "settings": {
-            // "foreground": "#FF0000"
+            // "foreground": "#75beff"
           }
         }
       ]
