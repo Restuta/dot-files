@@ -7,25 +7,42 @@
   "editor.wordWrapColumn": 100,
   "prettier.printWidth": 85,
   "prettier.singleQuote": true,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Community Material Theme Darker",
   "cSpell.userWords": [
+    "Annotater",
     "Bumpito",
     "CLOUDAMQP",
     "Hubspot",
     "Onepark",
     "Orgs",
+    "REDISCLOUD",
+    "browserslist",
+    "codegen",
+    "datepicker",
+    "dropzone",
     "dyno",
     "envoybot",
+    "fontawesome",
+    "formik",
+    "fortawesome",
     "gitbot",
     "hardcoding",
     "jide",
     "juni",
+    "juniverse",
+    "katex",
+    "listview",
     "mrkdwn",
     "ntwrkbot",
+    "objectid",
+    "prettierrc",
     "sano",
     "snengbot",
     "talview",
+    "testcafe",
+    "timesheet",
     "uinc",
+    "unfocus",
     "wellthy",
     "xfers"
   ],
@@ -65,5 +82,10 @@
       // "symbolIcon.variableForeground": "#75beff"
       // "sideBar.background": "#ff0000"
     }
-  }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
