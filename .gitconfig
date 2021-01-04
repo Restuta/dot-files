@@ -63,7 +63,7 @@
 	pc = !git push -u && hub compare
 	br = branch
 	# show few most recently create branches
-	brr = !git for-each-ref --sort='-committerdate' --format='%(refname)%09%(committerdate)' refs/heads | sed -e 's-refs/heads/--' | head
+	brr = !git for-each-ref --sort='-committerdate' --format='%(refname)%09%(committerdate)' refs/heads | sed -e 's-refs/heads/--' | head -n 16
 	brvv = branch -vv #shows branches and corresponding remotes
 	remotes = brvv
 	r = rebase

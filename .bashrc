@@ -71,9 +71,12 @@ alias ys="yarn start"
 
 alias nrd="npm run dev"
 
-# git
+# git and GitHub CLI
 alias glocal="git lgc remotes/origin/$(git branch | grep \* | cut -d ' ' -f2)..HEAD"
+
 alias ch="gh pr checkout $1"
+alias view="gh pr view --web"
+alias create="gh pr create --web"
 
 # run ava debugger, ava-dbg "file/name"
 alias ava-dbg="node --inspect node_modules/ava/profile.js"
