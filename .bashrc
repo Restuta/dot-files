@@ -63,8 +63,9 @@ export PATH="$HOME/.yarn/bin:$PATH"
 # better formatted docker ps -a Shows all running and stopped containers
 alias dps="docker ps -a --format 'table {{.Names}}\t{{.Image}}\t{{.Size}}\t{{.Command}}\t{{.Status}}\t{{.Ports}}'"
 
-alias dc="docker-compose"
-alias dcu="docker-compose up"
+alias dc="docker compose"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
 
 alias y="yarn"
 alias ys="yarn start"
@@ -85,3 +86,6 @@ alias fh="history | awk '{\$1=\"\";print}' | fzf --tac --no-sort | awk '{\$1=\$1
 
 # toast
 alias run-prod-script="heroku run bash -a toast-prod"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+. "$HOME/.cargo/env"
