@@ -9,3 +9,4 @@ ln -s $(pwd)/git-completion.bash ~/git-completion.bash
 ln -s $(pwd)/git-prompt.sh ~/git-prompt.sh
 ln -s $(pwd)/.gitconfig ~/.gitconfig
 ln -s $(pwd)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -s $(pwd)/sublime/tasks-custom.hidden-tmTheme ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/PlainTasks/tasks-custom.hidden-tmTheme
