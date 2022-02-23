@@ -10,11 +10,11 @@
   },
   "Normal Font" : "Monaco 14",
   "Ansi 4 Color" : {
-    "Red Component" : 0.28753279102966189,
+    "Red Component" : 0.36534227523952723,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.953582763671875,
+    "Blue Component" : 0.97515869140625,
     "Alpha Component" : 1,
-    "Green Component" : 0.40489751643344002
+    "Green Component" : 0.47279808653236743
   },
   "Bold Color" : {
     "Green Component" : 1,
