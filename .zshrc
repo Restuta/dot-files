@@ -58,9 +58,8 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime colorize zsh-syntax-highlighting)
+plugins=(git sublime colorize)
 
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -86,7 +85,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -94,7 +92,21 @@ source $ZSH/oh-my-zsh.sh
 #enables powerline https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html#zsh-prompt
 # . /Users/Restuta/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
- source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $ZSH/oh-my-zsh.sh
+
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
 
 #for pure theme to work, for others uncomment ZSH_THEME theme above
  autoload -U promptinit; promptinit

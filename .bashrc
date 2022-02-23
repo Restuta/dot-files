@@ -71,13 +71,15 @@ alias y="yarn"
 alias ys="yarn start"
 
 alias nrd="npm run dev"
-
 # git and GitHub CLI
-alias glocal="git lgc remotes/origin/$(git branch | grep \* | cut -d ' ' -f2)..HEAD"
+
+# this alias fails in folders that are not git repos
+# alias glocal="git lgc remotes/origin/$(git branch | grep \* | cut -d ' ' -f2)..HEAD"
 
 alias ch="gh pr checkout $1"
 alias view="gh pr view --web"
 alias create="gh pr create --web"
+alias stree='/Applications/SourceTree.app/Contents/Resources/stree'
 
 # run ava debugger, ava-dbg "file/name"
 alias ava-dbg="node --inspect node_modules/ava/profile.js"
@@ -88,4 +90,6 @@ alias fh="history | awk '{\$1=\"\";print}' | fzf --tac --no-sort | awk '{\$1=\$1
 alias run-prod-script="heroku run bash -a toast-prod"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-. "$HOME/.cargo/env"
+
+# rust / solana
+#. "$HOME/.cargo/env"

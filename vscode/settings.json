@@ -1,5 +1,4 @@
 {
-  "window.zoomLevel": 0,
   "editor.fontSize": 15,
   "editor.fontFamily": "'Operator Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.tabSize": 2,
@@ -55,23 +54,23 @@
   ],
   "editor.formatOnType": true,
   "editor.suggestFontSize": 14,
-
   "editor.lineHeight": 19,
   "bracket-pair-colorizer-2.colorMode": "Independent",
   "eslint.format.enable": true,
   "editor.formatOnSave": true,
   "workbench.iconTheme": "eq-material-theme-icons",
-
   // Controls if file decorations should use badges.
   "explorer.decorations.badges": true,
-
   "editor.tokenColorCustomizations": {
     "[Community Material Theme Darker]": {
       // customize textMate rules here https://code.visualstudio.com/api/extension-guides/color-theme
       // Atom one dark pro has syntax for styling function arguments
       "textMateRules": [
         {
-          "scope": ["comment", "comment punctuation.definition.comment"],
+          "scope": [
+            "comment",
+            "comment punctuation.definition.comment"
+          ],
           "settings": {
             // "foreground": "#75beff"
           }
@@ -79,7 +78,6 @@
       ]
     }
   },
-
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#282c34",
     // "activityBar.background": "#282c34"
@@ -99,5 +97,7 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.minimap.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open"
 }

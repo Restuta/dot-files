@@ -15,7 +15,13 @@ Run `./deploy.sh`
 ```
 brew install git
 brew install hub
-brew install zsh zsh-completions
+brew install gh
+brew install zsh
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+brew zsh-completions
 brew install zsh-syntax-highlighting
 
 brew install zsh-autosuggestions
@@ -32,10 +38,9 @@ brew install bat
 brew install awscli
 
 # make zsh default shell
-chsh -s /bin/zsh
-
-# install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# before you do this you might need to modify /etc/shells
+# to include /opt/homebrew/bin/zsh
+chsh -s $(which zsh)
 
 # pure prompt
 npm install --global pure-prompt
@@ -43,5 +48,6 @@ npm install --global pure-prompt
 # diff so fancy
 npm i -g diff-so-fancy
 git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
+
 
 ```
