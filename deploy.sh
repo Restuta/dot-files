@@ -10,3 +10,6 @@ ln -s $(pwd)/git-prompt.sh ~/git-prompt.sh
 ln -s $(pwd)/.gitconfig ~/.gitconfig
 ln -s $(pwd)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -s $(pwd)/sublime/tasks-custom.hidden-tmTheme ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/PlainTasks/tasks-custom.hidden-tmTheme
+
+# sometimes sublime is installed in just "Sublime Text" directory w/o the version number 
+ln -s $(pwd)/sublime/tasks-custom.hidden-tmTheme ~/Library/Application\ Support/Sublime\ Text\/Packages/PlainTasks/tasks-custom.hidden-tmTheme
