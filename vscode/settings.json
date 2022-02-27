@@ -1,12 +1,11 @@
 {
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.fontFamily": "'Operator Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.tabSize": 2,
   "editor.fontLigatures": true,
   "editor.wordWrapColumn": 100,
   "prettier.printWidth": 85,
   "prettier.singleQuote": true,
-  "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
   "cSpell.userWords": [
     "Annotater",
     "browserslist",
@@ -58,7 +57,7 @@
   "bracket-pair-colorizer-2.colorMode": "Independent",
   "eslint.format.enable": true,
   "editor.formatOnSave": true,
-  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.iconTheme": "vscode-icons",
   // Controls if file decorations should use badges.
   "explorer.decorations.badges": true,
   "editor.tokenColorCustomizations": {
@@ -67,28 +66,141 @@
       // Atom one dark pro has syntax for styling function arguments
       "textMateRules": [
         {
-          "scope": [
-            "comment",
-            "comment punctuation.definition.comment"
-          ],
+          "scope": ["comment", "comment punctuation.definition.comment"],
           "settings": {
             // "foreground": "#75beff"
           }
         }
       ]
+    },
+    "[Community Material Theme Palenight High Contrast]": {
+      "textMateRules": [
+        { // control keywords
+          "scope": [
+            "keyword.control",
+            "constant.other.color",
+            "punctuation.definition.tag",
+            "punctuation",
+            "punctuation.separator.inheritance.php",
+            "punctuation.definition.tag.html",
+            "punctuation.definition.tag.begin.html",
+            "punctuation.definition.tag.end.html",
+            "punctuation.section.embedded",
+            "keyword.other.template",
+            "keyword.other.substitution"
+          ],
+          "settings": {
+            "foreground": "#89DDFF"
+          }
+        },
+        {
+          "scope": [ "keyword.control" ],
+          "settings": { "fontStyle": "", "foreground": "#C792EA" }
+        },
+
+        { // punctuation
+          "scope": [
+            "punctuation.definition.string.begin.ts",
+            "punctuation.definition.string.end.ts",
+            "string.quoted.single.ts",
+            "punctuation.definition.string.begin.js",
+            "punctuation.definition.string.end.js",
+            "string.quoted.single.js",
+            // "meta.var.expr.js",
+            // "meta.import.ts",
+            // "source.ts",
+            // "tag.decorator.js entity.name.tag.js",
+            // "tag.decorator.js punctuation.definition.tag.js"
+          ],
+          "settings": { "foreground": "#C3E88D", }
+        },
+
+        { // punctuation
+          "scope" :[
+            "keyword.operator.access.dot.rust",
+            "punctuation.comma",
+            "punctuation.definition.parameters.begin",
+            "punctuation.definition.parameters.end",
+            "punctuation.definition.block",
+            "punctuation.accessor",
+            "punctuation.separator.comma",
+            "punctuation.separator.key-value",
+          ],
+          "settings": {"foreground": "#A6ACCD"}
+        },
+        // this
+        {
+          "scope": [ "variable.language.this" ],
+          "settings": { "foreground": "#94e1ff" }
+        },
+        // function
+        {
+          "scope": [
+            "entity.name.function.ts",
+            "meta.function-call.ts",
+            // "meta.block.ts",
+            // "meta.method.declaration.ts",
+          ],
+          "settings": { "foreground": "#F07178",}
+        },
+        // rust
+        {
+          "scope": [ 
+            "punctuation.brackets.attribute.rust", 
+            // "punctuation.brackets.round.rust",
+            // "punctuation.brackets.square.rust",
+            "punctuation.brackets.attribute.rust",
+            "punctuation.definition.attribute.rust",
+            "meta.attribute.rust"
+          ],
+          "settings": {
+            "foreground": "#946157",
+          }
+        }
+      ]
+    }
+  },
+  
+  "editor.semanticTokenColorCustomizations": {
+    "[Community Material Theme Palenight High Contrast]": {
+      // enables semantic highlighting
+      "enabled": true,
+      "rules": {
+        // "constParameter": "#b4ff28",
+        "parameter": "#517cda",
+        "variable": "#A6ACCD",
+        "function.local": "#F07178",
+        "method": "#F07178",
+        "method.defaultLibrary": "#A6ACCD",
+        "method.static": "#F78C6C",
+        "function.readonly": "#F07178",
+
+        // "support.function": "#F07178",
+        // "variable.readonly": "#f78eb1",
+        "variable.readonly.local": "#8eaff7",
+        
+        "keyword": { "fontStyle": "", "foreground" :"#C792EA"},
+        "interface": "#F78C6C",
+        "property.readonly": "#F78C6C",
+        // "storage.modified": "#ff0000"
+        // "property": "#F78C6C",
+      }
     }
   },
   "workbench.colorCustomizations": {
-    "tab.activeBackground": "#282c34",
-    // "activityBar.background": "#282c34"
+    // "tab.activeBackground": "#191b20",
+    "tab.activeBackground": "#202329",
+    // "activityBar.background": "#282c34",
     // "sideBar.background": "#282c34"
     "[Community Material Theme Darker]": {
       // "symbolIcon.variableForeground": "#75beff"
       // "sideBar.background": "#ff0000"
+      
     }
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    // "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -99,5 +211,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.minimap.enabled": false,
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "vsicons.presets.foldersAllDefaultIcon": true,
+  "workbench.tree.indent": 16,
+  // "vsicons.associations.folderDefault.root_folder"
 }
