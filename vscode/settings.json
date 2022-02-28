@@ -216,5 +216,6 @@
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "vsicons.presets.foldersAllDefaultIcon": true,
   "workbench.tree.indent": 16,
+  "files.autoSave": "afterDelay",
   // "vsicons.associations.folderDefault.root_folder"
 }

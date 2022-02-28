@@ -22,7 +22,7 @@
 	renames = true
 	cmd = \"kdiff3\" \"$LOCAL\" \"$REMOTE\"
 [core]
-	editor = subl -n -w
+	editor = code --wait
 	#editor = atom --wait
 	autocrlf = input
 	packedGitLimit = 128m
@@ -140,10 +140,10 @@
 	decorate = true
 	abbrevCommit = true
 [difftool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [fetch]
 	prune = true
