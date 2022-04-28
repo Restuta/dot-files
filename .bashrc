@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/bashrc.pre.bash"
 # git
 alias git=hub
 alias g=git
@@ -76,6 +78,8 @@ alias nrd="npm run dev"
 # this alias fails in folders that are not git repos
 # alias glocal="git lgc remotes/origin/$(git branch | grep \* | cut -d ' ' -f2)..HEAD"
 
+alias list="gh pr list"
+alias list-me="gh pr list --author \"@me\""
 alias ch="gh pr checkout $1"
 alias view="gh pr view --web"
 alias create="gh pr create --web"
@@ -94,3 +98,11 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # rust / solana
 #. "$HOME/.cargo/env
 source $HOME/.cargo/env
+
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/bashrc.post.bash"
+
+# has to be last or arrow keys won't work
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

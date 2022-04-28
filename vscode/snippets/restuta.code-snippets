@@ -16,11 +16,27 @@
 	// 	"description": "Log output to console"
 	// }
 	"lm": {
-		"scope": "javascript,typescript",
+		"scope": "javascript,typescript,typescriptreact",
 		"prefix": "lm",
 		"body": [
 			"() => $1"
 		],
 		"description": "creates a lambda function"
+	},
+	"cl": {
+		"scope": "javascript,typescript,typescriptreact",
+		"prefix": "cl",
+		"body": [
+			"console.log($1)"
+		],
+		"description": "console.log"
+	},
+	"cd": {
+		"scope": "javascript,typescript,typescriptreact",
+		"prefix": "cd",
+		"body": [
+			"console.dir($1, {depth: 4, colors: true})"
+		],
+		"description": "console.log"
 	}
 }

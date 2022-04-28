@@ -1,58 +1,13 @@
 {
-  "editor.fontSize": 14,
   "editor.fontFamily": "'Operator Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.tabSize": 2,
   "editor.fontLigatures": true,
+  "editor.fontSize": 15,
   "editor.wordWrapColumn": 100,
   "prettier.printWidth": 85,
   "prettier.singleQuote": true,
-  "cSpell.userWords": [
-    "Annotater",
-    "browserslist",
-    "Bumpito",
-    "CLOUDAMQP",
-    "codegen",
-    "datepicker",
-    "dropzone",
-    "dyno",
-    "envoybot",
-    "Firestore",
-    "fontawesome",
-    "formik",
-    "fortawesome",
-    "gitbot",
-    "hardcoding",
-    "heroicons",
-    "Hubspot",
-    "jide",
-    "juni",
-    "juniverse",
-    "katex",
-    "listview",
-    "mrkdwn",
-    "ntwrkbot",
-    "objectid",
-    "Onepark",
-    "Orgs",
-    "prettierrc",
-    "reactfire",
-    "REDISCLOUD",
-    "sano",
-    "seedrandom",
-    "Sharky",
-    "snengbot",
-    "tailwindcss",
-    "talview",
-    "testcafe",
-    "timesheet",
-    "Typeform",
-    "uinc",
-    "unfocus",
-    "wellthy",
-    "xfers"
-  ],
   "editor.formatOnType": true,
-  "editor.suggestFontSize": 14,
+  "editor.suggestFontSize": 13,
   "editor.lineHeight": 19,
   "bracket-pair-colorizer-2.colorMode": "Independent",
   "eslint.format.enable": true,
@@ -60,22 +15,38 @@
   "workbench.iconTheme": "vscode-icons",
   // Controls if file decorations should use badges.
   "explorer.decorations.badges": true,
+
   "editor.tokenColorCustomizations": {
-    "[Community Material Theme Darker]": {
-      // customize textMate rules here https://code.visualstudio.com/api/extension-guides/color-theme
-      // Atom one dark pro has syntax for styling function arguments
-      "textMateRules": [
-        {
-          "scope": ["comment", "comment punctuation.definition.comment"],
-          "settings": {
-            // "foreground": "#75beff"
-          }
-        }
-      ]
-    },
+    // "[Community Material Theme Darker]": {
+    //   // customize textMate rules here https://code.visualstudio.com/api/extension-guides/color-theme
+    //   // Atom one dark pro has syntax for styling function arguments
+    //   "textMateRules": [
+    //     {
+    //       "scope": ["comment", "comment punctuation.definition.comment"],
+    //       "settings": {
+    //         // "foreground": "#75beff"
+    //       }
+    //     }
+    //   ]
+    // },
     "[Community Material Theme Palenight High Contrast]": {
       "textMateRules": [
-        { // control keywords
+        {
+          "scope": [
+            // "variable.other.constant.property.ts",
+            "variable.other.constant.ts",
+            "variable.other.constant.ts",
+            "meta.object.member.ts",
+            "meta.objectliteral.ts",
+            "meta.object.member.ts",
+            "meta.objectliteral.ts"
+          ],
+          "settings": {
+            "foreground": "#89DDFF"
+          }
+        },
+        {
+          // control keywords
           "scope": [
             "keyword.control",
             "constant.other.color",
@@ -90,33 +61,67 @@
             "keyword.other.substitution"
           ],
           "settings": {
-            "foreground": "#89DDFF"
+            "foreground": "#a6accdb0"
           }
         },
         {
-          "scope": [ "keyword.control" ],
+          "scope": [
+            "punctuation.definition.tag.begin.tsx",
+            "meta.tag.tsx",
+            "meta.block.tsx",
+            "meta.arrow.tsx",
+            "meta.var.expr.tsx",
+            "source.tsx"
+          ],
+          "settings": {
+            // "foreground": "#F07178"
+          }
+        },
+        // react custom components
+        {
+          "scope": [
+            "support.class.component.tsx"
+            // "punctuation.definition.tag.begin.tsx"
+            // "entity.name.tag.tsx",
+            // "meta.tag.without-attributes.tsx",
+            // "meta.jsx.children.tsx",
+            // "meta.tag.without-attributes.tsx",
+            // "meta.block.tsx",
+            // "meta.function.expression.tsx",
+            // "meta.export.default.tsx",
+            // "source.tsx"
+          ],
+          "settings": {
+            // "foreground": "#8aaefc",
+            // "fontStyle": "bold"
+          }
+        },
+        {
+          "scope": ["keyword.control"],
           "settings": { "fontStyle": "", "foreground": "#C792EA" }
         },
 
-        { // punctuation
+        {
+          // punctuation
           "scope": [
             "punctuation.definition.string.begin.ts",
             "punctuation.definition.string.end.ts",
             "string.quoted.single.ts",
             "punctuation.definition.string.begin.js",
             "punctuation.definition.string.end.js",
-            "string.quoted.single.js",
+            "string.quoted.single.js"
             // "meta.var.expr.js",
             // "meta.import.ts",
             // "source.ts",
             // "tag.decorator.js entity.name.tag.js",
             // "tag.decorator.js punctuation.definition.tag.js"
           ],
-          "settings": { "foreground": "#C3E88D", }
+          "settings": { "foreground": "#C3E88D" }
         },
 
-        { // punctuation
-          "scope" :[
+        {
+          // punctuation
+          "scope": [
             "keyword.operator.access.dot.rust",
             "punctuation.comma",
             "punctuation.definition.parameters.begin",
@@ -124,29 +129,29 @@
             "punctuation.definition.block",
             "punctuation.accessor",
             "punctuation.separator.comma",
-            "punctuation.separator.key-value",
+            "punctuation.separator.key-value"
           ],
-          "settings": {"foreground": "#A6ACCD"}
+          "settings": { "foreground": "#A6ACCD" }
         },
         // this
         {
-          "scope": [ "variable.language.this" ],
+          "scope": ["variable.language.this"],
           "settings": { "foreground": "#94e1ff" }
         },
         // function
         {
           "scope": [
             "entity.name.function.ts",
-            "meta.function-call.ts",
+            "meta.function-call.ts"
             // "meta.block.ts",
             // "meta.method.declaration.ts",
           ],
-          "settings": { "foreground": "#F07178",}
+          "settings": { "foreground": "#F07178" }
         },
         // rust
         {
-          "scope": [ 
-            "punctuation.brackets.attribute.rust", 
+          "scope": [
+            "punctuation.brackets.attribute.rust",
             // "punctuation.brackets.round.rust",
             // "punctuation.brackets.square.rust",
             "punctuation.brackets.attribute.rust",
@@ -154,34 +159,41 @@
             "meta.attribute.rust"
           ],
           "settings": {
-            "foreground": "#946157",
+            "foreground": "#946157"
           }
         }
       ]
     }
   },
-  
+
   "editor.semanticTokenColorCustomizations": {
     "[Community Material Theme Palenight High Contrast]": {
       // enables semantic highlighting
       "enabled": true,
       "rules": {
         // "constParameter": "#b4ff28",
-        "parameter": "#517cda",
-        "variable": "#A6ACCD",
+        "parameter": "#769ff8",
+
         "function.local": "#F07178",
         "method": "#F07178",
-        "method.defaultLibrary": "#A6ACCD",
+        "method.defaultLibrary": "#F07178",
         "method.static": "#F78C6C",
         "function.readonly": "#F07178",
+        "function": "#F07178",
+        "function.declaration": "#F07178",
 
-        // "support.function": "#F07178",
-        // "variable.readonly": "#f78eb1",
-        "variable.readonly.local": "#8eaff7",
-        
-        "keyword": { "fontStyle": "", "foreground" :"#C792EA"},
-        "interface": "#F78C6C",
+        "support.function": "#F07178",
+        "variable.readonly": "#A6ACCD",
+        "variable": "#A6ACCD",
+        "variable.defaultLibrary": "#FFCB6B",
+        "variable.declaration.readonly": "#A6ACCD",
+        // "variable.readonly.local": "#8db9fa",
+        "variable.readonly.local": "#A6ACCD",
+
+        "keyword": { "fontStyle": "", "foreground": "#C792EA" },
+        // "interface": "#F78C6C",
         "property.readonly": "#F78C6C",
+        "property.declaration": "#a6accdc0"
         // "storage.modified": "#ff0000"
         // "property": "#F78C6C",
       }
@@ -195,12 +207,23 @@
     "[Community Material Theme Darker]": {
       // "symbolIcon.variableForeground": "#75beff"
       // "sideBar.background": "#ff0000"
-      
+    },
+    "[Community Material Theme Palenight High Contrast]": {
+      // 24292e
+      "editor.background": "#1e2431",
+      "editorInlayHint.parameterBackground": "#1e2431",
+      "editorInlayHint.typeBackground": "#1e2431",
+      // "editorInlayHint.parameterForeground": "#1e2431"
+      "editorInlayHint.typeForeground": "#fcd6584d"
     }
+
+    // "editorInlayHint.typeBackground": "#ffdfdf19"
+    // "editorInlayHint.parameterForeground": "#FFFFFF4D",
+    // "editorInlayHint.typeForeground": "#FFFFFF4D"
   },
   "[typescriptreact]": {
     // "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -213,9 +236,114 @@
   "editor.minimap.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "vsicons.presets.foldersAllDefaultIcon": true,
   "workbench.tree.indent": 16,
   "files.autoSave": "afterDelay",
+  "workbench.startupEditor": "none",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "audioCues.noInlayHints": "off",
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+  "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.accessibilitySupport": "off",
+  "vsicons.presets.jsonOfficial": true,
+  "gitlens.plusFeatures.enabled": false,
+  "git.autofetch": true,
+
   // "vsicons.associations.folderDefault.root_folder"
+  "cSpell.userWords": [
+    "Annotater",
+    "arweave",
+    "Bitepaper",
+    "bitwonder",
+    "Blockhash",
+    "Borrowable",
+    "browserslist",
+    "Bumpito",
+    "CARDINALIFIED",
+    "Cets",
+    "CLOUDAMQP",
+    "codegen",
+    "completeauthchallenge",
+    "Creck",
+    "crossmint",
+    "datepicker",
+    "Degen",
+    "devnet",
+    "dropzone",
+    "dyno",
+    "ellipsify",
+    "envoybot",
+    "Firestore",
+    "fontawesome",
+    "Foreclosable",
+    "formik",
+    "fortawesome",
+    "fundee",
+    "getauthchallenge",
+    "gitbot",
+    "hardcoding",
+    "Heroicon",
+    "heroicons",
+    "Hubspot",
+    "ipfs",
+    "jide",
+    "juni",
+    "juniverse",
+    "katex",
+    "Lamports",
+    "lauravaughan",
+    "listview",
+    "localnet",
+    "metaplex",
+    "mrkdwn",
+    "noty",
+    "ntwrkbot",
+    "objectid",
+    "Onepark",
+    "orderbook",
+    "orderbooks",
+    "Orgs",
+    "Permissionless",
+    "Peskys",
+    "prettierrc",
+    "Pubkey",
+    "reactfire",
+    "REDISCLOUD",
+    "regexes",
+    "saberhq",
+    "SAMO",
+    "sano",
+    "seedrandom",
+    "semibold",
+    "Sharky",
+    "sigs",
+    "snengbot",
+    "solana",
+    "Solflare",
+    "Sollet",
+    "solscan",
+    "SYSVAR",
+    "tailwindcss",
+    "Taiyo",
+    "talview",
+    "testcafe",
+    "timesheet",
+    "Typeform",
+    "uinc",
+    "unfocus",
+    "Vercel",
+    "wellthy",
+    "xfers"
+  ]
 }

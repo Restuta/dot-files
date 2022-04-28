@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/bash_profile.pre.bash"
 export PATH=/usr/local/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -50,3 +52,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 . "$HOME/.cargo/env"
 
 export PATH="/Users/restuta/.local/share/solana/install/active_release/bin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/bash_profile.post.bash"

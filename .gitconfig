@@ -1,5 +1,5 @@
 [merge]
-	tool = p4merge
+	tool = vscode
 [mergetool "tkdiff"]
 	path = tkdiff
 	trustExitCode = true
@@ -16,7 +16,7 @@
 	trustExitCode = true
 [diff]
 	guitool = p4merge
-	tool = p4merge
+	tool = vscode
 [difftool "kdiff3"]
 	path = kdiff3
 	renames = true
@@ -166,3 +166,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE

@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
@@ -95,6 +97,8 @@ plugins=(git sublime colorize)
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $ZSH/oh-my-zsh.sh
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line)
+
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -103,13 +107,21 @@ if type brew &>/dev/null; then
     compinit
 fi
 
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
 
 #for pure theme to work, for others uncomment ZSH_THEME theme above
  autoload -U promptinit; promptinit
  prompt pure
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"
+
+# enables non-shared history per terminal
+unsetopt inc_append_history
+unsetopt share_history
+
