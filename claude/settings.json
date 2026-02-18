@@ -1,10 +1,17 @@
 {
   "permissions": {
-    "allow": []
+    "allow": [
+      "Bash(gh *)",
+      "Bash(gh *:*)",
+      "Bash(git *)",
+      "Bash(git *:*)",
+      "Bash(*gh *)",
+      "Bash(*git *)"
+    ]
   },
   "statusLine": {
     "type": "command",
-    "command": "input=$(cat); cwd=$(echo \"$input\" | jq -r '.workspace.current_dir'); remaining=$(echo \"$input\" | jq -r '.context_window.remaining_percentage // empty'); short_cwd=$(echo \"$cwd\" | sed \"s|^$HOME|~|\"); git_branch=\"\"; if [ -d \"$cwd/.git\" ] || git -C \"$cwd\" rev-parse --git-dir > /dev/null 2>&1; then git_branch=$(cd \"$cwd\" && git -c core.useBuiltinFSMonitor=false symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null); [ -n \"$git_branch\" ] && git_branch=\" ($git_branch)\"; fi; cost=$(printf '%.2f' $(echo \"$input\" | jq -r '.cost.total_cost_usd // 0')); context_info=\"\"; [ -n \"$remaining\" ] && context_info=\" [${remaining}%, \\$${cost}]\"; printf \"\\033[38;2;232;127;95m❋\\033[0m \\033[38;5;244m%s\\033[0m\\033[0;33m%s\\033[0m\\033[2;36m%s\\033[0m\" \"$short_cwd\" \"$git_branch\" \"$context_info\""
+    "command": "~/.claude/statusline.sh"
   },
   "syntaxHighlightingDisabled": false
 }
