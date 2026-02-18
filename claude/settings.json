@@ -1,12 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh *)",
-      "Bash(gh *:*)",
-      "Bash(git *)",
-      "Bash(git *:*)",
-      "Bash(*gh *)",
-      "Bash(*git *)"
+      "Bash",
+      "Read",
+      "Edit",
+      "Write",
+      "WebFetch",
+      "WebSearch",
+      "Glob",
+      "Grep"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(git push --force *)",
+      "Bash(git reset --hard *)"
     ]
   },
   "statusLine": {
