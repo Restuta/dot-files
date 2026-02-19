@@ -21,5 +21,6 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
-  "syntaxHighlightingDisabled": false
+  "syntaxHighlightingDisabled": false,
+  "model": "opus[1m]"
 }

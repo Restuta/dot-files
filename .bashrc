@@ -1,5 +1,6 @@
-# Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/bashrc.pre.bash"
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash"
+# Q pre block. Keep at the top of this file.
 # git
 alias git=hub
 alias g=git
@@ -101,8 +102,13 @@ source $HOME/.cargo/env
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/bashrc.post.bash"
-
 # has to be last or arrow keys won't work
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+[[ -f "$HOME/fig-export/dotfiles/dotfile.bash" ]] && source "$HOME/fig-export/dotfiles/dotfile.bash"
+
+# Q post block. Keep at the bottom of this file.
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash"

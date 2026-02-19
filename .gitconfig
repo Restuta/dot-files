@@ -118,6 +118,7 @@
 	helper =
 [push]
 	default = current
+	autoSetupRemote = true
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -168,3 +169,9 @@
 	required = true
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential

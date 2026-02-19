@@ -243,22 +243,26 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.inlayHints.parameterNames.enabled": "all",
-  "audioCues.noInlayHints": "off",
+  "typescript.inlayHints.parameterNames.enabled": "literals",
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": false,
   "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
   "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
+    "FIG_NEW_SESSION": "1",
+    "CW_NEW_SESSION": "1",
+    "Q_NEW_SESSION": "1"
   },
   "editor.accessibilitySupport": "off",
   "vsicons.presets.jsonOfficial": true,
-  "gitlens.plusFeatures.enabled": false,
   "git.autofetch": true,
+
+  "importCost.smallPackageDarkColor": "#2F492A",
+  "importCost.mediumPackageDarkColor": "#2F492A",
+  "importCost.largePackageDarkColor": "#67373A",
 
   // "vsicons.associations.folderDefault.root_folder"
   "cSpell.userWords": [
@@ -345,5 +349,13 @@
     "Vercel",
     "wellthy",
     "xfers"
-  ]
+  ],
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "none",
+  "editor.stickyScroll.enabled": true,
+  "accessibility.signals.noInlayHints": {
+    "sound": "off"
+  },
+  "prisma.showPrismaDataPlatformNotification": false,
+  "github.copilot.nextEditSuggestions.enabled": true
 }
