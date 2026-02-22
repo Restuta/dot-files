@@ -8,7 +8,10 @@
       "WebFetch",
       "WebSearch",
       "Glob",
-      "Grep"
+      "Grep",
+      "mcp__sentry__*",
+      "mcp__notion__*",
+      "mcp__claude_ai_Slack__*"
     ],
     "deny": [
       "Bash(rm -rf /)",
